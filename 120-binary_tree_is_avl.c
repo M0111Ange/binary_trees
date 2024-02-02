@@ -1,7 +1,7 @@
 #include "binary_trees.h"
 
 /**
- * bt_height - measures the height of a binary tree
+ * binary_tree_height - measures the height of a binary tree
  * @tree: tree to access
  * Return: the height
  */
@@ -58,7 +58,7 @@ int sub_avl(const binary_tree_t *tree, int lower, int high)
 }
 
 /**
- * binary_tree_avl - this func checks if a binary tree is a valid AVL tree.
+ * binary_tree_is_avl - this func checks if a binary tree is a valid AVL tree.
  * @tree: tree to check.
  * Return: 1 if tree is AVL, 0 otherwise
  */
