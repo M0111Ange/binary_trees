@@ -1,4 +1,4 @@
-i#include "binary_trees.h"
+#include "binary_trees.h"
 /**
  * exp_sort - func creates tree using the half element of the array
  * @parent: the parent of the node to create

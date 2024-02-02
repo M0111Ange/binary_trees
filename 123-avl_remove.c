@@ -1,4 +1,27 @@
 #include "binary_trees.h"
+
+/**
+ * balanciaga - func that Measures balance factor of a AVL
+ * @tree: tree to check
+ * Return: balanced factor
+ */
+void balanciaga(avl_t **tree)
+{
+	int bival;
+
+	if (tree == NULL || *tree == NULL)
+		return;
+	if ((*tree)->left == NULL && (*tree)->right == NULL)
+		return;
+	balanciaga(&(*tree)->left);
+	balanciaga(&(*tree)->right);
+	bival = binary_tree_balance((const binary_tree_t *)*tree);
+	if (bival > 1)
+		*tree = binary_tree_rotate_right((binary_tree_t *)*tree);
+	else if (bival < -1)
+		*tree = binary_tree_rotate_left((binary_tree_t *)*tree);
+}
+
 /**
  * successor_node - get the next successor (the min node in the right subtree)
  * @node: tree to access
@@ -118,6 +141,6 @@ avl_t *avl_remove(avl_t *root, int value)
 
 	if (rooti == NULL)
 		return (NULL);
-	bal(&rooti);
+	balanciaga(&rooti);
 	return (rooti);
 }

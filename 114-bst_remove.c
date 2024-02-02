@@ -99,7 +99,7 @@ bst_t *bst_remove(bst_t *root, int value)
 	{
 		t = remove_type(root);
 		if (t != 0)
-			bst_remove(root->right, type);
+			bst_remove(root->right, t);
 	}
 	else
 		return (NULL);

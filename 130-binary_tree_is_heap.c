@@ -61,7 +61,7 @@ int tree_is_perfect(const binary_tree_t *tree)
 	{
 		lt = 1 + tree_is_perfect(tree->left);
 		rt = 1 + tree_is_perfect(tree->right);
-		if (rt == l && rt != 0 && lt != 0)
+		if (rt == lt && rt != 0 && lt != 0)
 			return (rt);
 		return (0);
 	}

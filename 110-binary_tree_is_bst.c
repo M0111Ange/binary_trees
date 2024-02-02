@@ -20,7 +20,7 @@ int check_subtree_Left(const binary_tree_t *node, int max)
 	{
 		if (node->n >= max)
 			return (0);
-		lt = check_subtree_Left(node->leftt, max);
+		lt = check_subtree_Left(node->left, max);
 		rt = check_subtree_Left(node->right, max);
 		if (lt == rt && lt == 1)
 			return (1);
@@ -84,7 +84,7 @@ int binary_tree_is_bst(const binary_tree_t *tree)
 	if (tree->right && tree->right->n > tree->n)
 	{
 		vari = check_subtree_Right(tree->right, tree->n);
-		if (var == 0)
+		if (vari == 0)
 			return (0);
 		rt = binary_tree_is_bst(tree->right);
 	}
